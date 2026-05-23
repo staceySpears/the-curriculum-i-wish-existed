@@ -95,17 +95,25 @@ See [`AI_POLICY.md`](./AI_POLICY.md).
 
 ## Cross-cutting spines
 
-Four disciplines run through every track.
+Eight disciplines run through every track.
 
 **Big-O and “why this data structure”** teaches learners to choose tools by cost, not habit.
 
 **The Discipline of Doubt** teaches edge-case thinking as a skill, not a personality trait some people just happen to have.
 
+**Debugging** teaches learners to investigate failure methodically — from reading error messages in Track 0 to tracing production issues in Track 7.
+
+**Code reading** teaches learners to understand before changing. Real engineering often begins inside code someone else wrote.
+
+**Testing maturity** teaches learners that tests are executable claims about behavior — not just checks, but design tools, regression shields, and confidence for refactoring.
+
 **Self-evaluation** teaches the meta-skill of judging your own work honestly and improving it without waiting for permission.
+
+**Technical communication** teaches learners to make their work legible to other humans — READMEs, commit messages, PR descriptions, walkthroughs, and design notes.
 
 **AI collaboration** teaches when to use AI, when not to, and how to keep your own thinking intact while using it well.
 
-See [`spines/`](./spines/).
+See [`spines/`](./spines/) and the [spine-by-track matrix](./spines/spine-by-track-matrix.md) for how each spine applies across tracks.
 
 ## What this curriculum does not promise
 

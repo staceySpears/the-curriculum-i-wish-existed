@@ -30,7 +30,18 @@ See `../../AI_POLICY.md`.
 
 ## Modules
 
-Complete the modules in order. Modules cover Java basics, each major data structure, complexity analysis, recursion, and debugging patterns.
+Complete the modules in order.
+
+1. `modules/01-java-environment-and-first-program.md`
+2. `modules/02-variables-types-expressions.md`
+3. `modules/03-conditionals.md`
+4. `modules/04-loops.md`
+5. `modules/05-methods.md`
+6. `modules/06-arrays-and-strings.md`
+7. `modules/07-classes-and-objects.md`
+8. `modules/08-collections.md`
+9. `modules/09-testing-basics.md`
+10. `modules/10-dsa-foundations.md`
 
 ## Exercises
 

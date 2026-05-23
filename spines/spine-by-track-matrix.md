@@ -1,12 +1,5 @@
 # Spine-by-Track Matrix
 
-**P** = Primary. Gate evidence required.
-**S** = Secondary. Practice encouraged, not gate-blocking.
-**—** = Not a focus.
-
-
-# Spine-by-Track Matrix
-
 This matrix shows how each spine is weighted across tracks.
 
 **P** = Primary. This is a main focus. Gate evidence is required here.
