@@ -30,7 +30,18 @@ See `../../AI_POLICY.md`.
 
 ## Modules
 
-Modules cover entry point identification, data flow tracing, reading tests, making safe changes, and explaining unfamiliar code to another person.
+Complete the modules in order.
+
+1. `modules/01-reading-unfamiliar-code.md`
+2. `modules/02-adding-tests-before-changing.md`
+3. `modules/03-making-small-safe-changes.md`
+4. `modules/04-tracing-call-chain.md`
+5. `modules/05-responsibility-boundaries.md`
+6. `modules/06-reading-tests-to-infer-behavior.md`
+7. `modules/07-debugging-across-components.md`
+8. `modules/08-explaining-tradeoffs.md`
+
+The legacy codebase used throughout this track is in `legacy-codebase/InventoryManager.java`.
 
 ## Exercises
 
