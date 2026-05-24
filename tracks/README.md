@@ -41,7 +41,7 @@ The capstone proves ownership.
 | Track | Status |
 |---|---|
 | Track 0 | Complete and ready for learners |
-| Track 1 | Modules and exercises drafted; verification checks added for Modules 01-10; exercise compile pass still needed |
+| Track 1 | Modules and exercises drafted; verification checks added for Modules 01-10; exercise files compile as starter stubs |
 | Track 2 | Modules and exercises drafted; evidence requirements strengthened; project/gate dry run still needed |
 | Track 3 | Structure defined; full module content not yet written |
 | Track 4 | Structure defined; full module content not yet written |
