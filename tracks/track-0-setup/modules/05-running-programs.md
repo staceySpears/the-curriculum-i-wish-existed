@@ -1,4 +1,4 @@
-# Module 05 — Running Programs
+# Module 5 — Running Programs
 
 ## Goal
 
