@@ -1,4 +1,4 @@
-# Module 02 — Files, Folders, and Paths
+# Module 2 — Files, Folders, and Paths
 
 ## Goal
 
