@@ -1,6 +1,6 @@
 // Module 7 Exercise: Classes and Objects
 
-public class ClassesAndObjects {
+class ClassesAndObjects {
     public static void main(String[] args) {
         // TODO: Create two BankAccount objects
         // Account 1: owner "Alice", starting balance 1000.0
