@@ -215,6 +215,149 @@ Look back at modules 1–9. Find one place where you made a data structure choic
 4. When would you choose `ArrayList` over `HashSet`?
 5. What is the difference between time complexity and space complexity?
 
+## Verification
+
+Complete both the self-check and the runnable check before attempting the Track 1 gate.
+
+### Self-check (reflective)
+
+Answer these in your own words:
+
+- [ ] What does O(1) mean in plain English?
+- [ ] What does O(n) mean in plain English?
+- [ ] What does O(n²) mean in plain English?
+- [ ] What tradeoff does a `HashSet` make when it speeds up duplicate detection?
+- [ ] What is the difference between time complexity and space complexity?
+
+### Runnable check (external)
+
+Create a file called `DsaVerification.java`:
+
+```bash
+cat > DsaVerification.java <<'EOF'
+import java.util.HashSet;
+import java.util.Set;
+
+public class DsaVerification {
+    public static void main(String[] args) {
+        int[] values = {4, 7, 2, 7, 9, 4};
+
+        System.out.println("Max: " + findMax(values));
+        System.out.println("Has duplicates: " + hasDuplicates(values));
+        System.out.println("Pair count for 11: " + countPairsWithSum(values, 11));
+    }
+
+    public static int findMax(int[] values) {
+        int max = values[0];
+        for (int i = 1; i < values.length; i++) {
+            if (values[i] > max) {
+                max = values[i];
+            }
+        }
+        return max;
+    }
+
+    public static boolean hasDuplicates(int[] values) {
+        Set<Integer> seen = new HashSet<>();
+        for (int value : values) {
+            if (seen.contains(value)) {
+                return true;
+            }
+            seen.add(value);
+        }
+        return false;
+    }
+
+    public static int countPairsWithSum(int[] values, int target) {
+        int count = 0;
+        for (int i = 0; i < values.length; i++) {
+            for (int j = i + 1; j < values.length; j++) {
+                if (values[i] + values[j] == target) {
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+}
+EOF
+```
+
+Compile and run:
+
+```bash
+javac DsaVerification.java
+java DsaVerification
+```
+
+Expected output:
+
+```text
+Max: 9
+Has duplicates: true
+Pair count for 11: 5
+```
+
+### Intentional logic error
+
+Now change the duplicate-checking method so it forgets to add values to the set:
+
+```java
+public static boolean hasDuplicates(int[] values) {
+    Set<Integer> seen = new HashSet<>();
+    for (int value : values) {
+        if (seen.contains(value)) {
+            return true;
+        }
+    }
+    return false;
+}
+```
+
+Compile and run again:
+
+```bash
+javac DsaVerification.java
+java DsaVerification
+```
+
+The program still compiles, but the duplicate result is wrong:
+
+```text
+Has duplicates: false
+```
+
+This happens because the set stays empty. A data structure only helps if the algorithm updates it at the right time.
+
+Fix it by adding `seen.add(value);` back after the `contains` check.
+
+### Common verification failures
+
+| What you might see | What it means | How to fix |
+|---|---|---|
+| `Has duplicates: false` for duplicate input | Values were never added to the set | Add each new value after checking it |
+| Pair count is too high | The nested loop counted each pair twice or counted an item with itself | Start the inner loop at `i + 1` |
+| `ArrayIndexOutOfBoundsException` | A loop went past the last valid index | Use `i < values.length` |
+| `cannot find symbol: class HashSet` | Missing import | Add `import java.util.HashSet;` |
+
+### Evidence to save for your gate
+
+- terminal transcript showing compilation and execution of `DsaVerification.java`
+- or a screenshot of your terminal with the expected output visible
+- one note explaining the time complexity of each method
+- one note explaining why the intentional duplicate-checking error produced the wrong result
+
+### Gate readiness
+
+You are ready for the Track 1 gate when:
+
+- all self-check questions are answered
+- `DsaVerification.java` compiles and produces expected output
+- you can explain why `findMax` is O(n)
+- you can explain why `hasDuplicates` uses extra memory
+- you can explain why `countPairsWithSum` is O(n²)
+- you have saved evidence, such as a terminal transcript or screenshot
+
 ## What comes next
 
 Track 1 is complete when you pass the Track 1 gate.
