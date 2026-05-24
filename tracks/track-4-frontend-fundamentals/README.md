@@ -1,6 +1,6 @@
 # Track 4 — Frontend Fundamentals
 
-The browser is a platform. Track 4 teaches it as one.
+Track 4 teaches the browser as a platform.
 
 This track introduces HTML, CSS, and JavaScript as a stack. The goal is not visual polish. The goal is functional, accessible, understandable interfaces — and the habit of asking what happens when something goes wrong or is missing.
 
