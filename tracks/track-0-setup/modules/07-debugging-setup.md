@@ -1,4 +1,4 @@
-# Module 07 — Debugging Setup
+# Module 7 — Debugging Setup
 
 ## Goal
 
