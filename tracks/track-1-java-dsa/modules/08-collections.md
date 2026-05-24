@@ -233,6 +233,136 @@ Write a test that proves `HashSet` silently ignores duplicate additions. Write a
 4. What does `HashSet` guarantee about its elements?
 5. Write a method that takes an `ArrayList<Integer>` and returns the most frequent value.
 
+## Verification
+
+Complete both the self-check and the runnable check before moving to Module 09.
+
+### Self-check (reflective)
+
+Answer these in your own words:
+
+- [ ] When would you choose `ArrayList` instead of an array?
+- [ ] When would you choose `HashMap` instead of `ArrayList`?
+- [ ] What does `HashSet` guarantee about duplicate values?
+- [ ] What does `getOrDefault` help you avoid?
+- [ ] Why should you not assume `HashMap` or `HashSet` iteration order?
+
+### Runnable check (external)
+
+Create a file called `CollectionsVerification.java`:
+
+```bash
+cat > CollectionsVerification.java <<'EOF'
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+public class CollectionsVerification {
+    public static void main(String[] args) {
+        List<String> names = new ArrayList<>();
+        names.add("Ada");
+        names.add("Grace");
+        names.add("Linus");
+        names.add("Grace");
+
+        System.out.println("Names size: " + names.size());
+        System.out.println("First name: " + names.get(0));
+        System.out.println("Contains Grace: " + names.contains("Grace"));
+
+        Set<String> uniqueNames = new HashSet<>(names);
+        System.out.println("Unique names: " + uniqueNames.size());
+
+        Map<String, Integer> counts = new HashMap<>();
+        for (String name : names) {
+            counts.put(name, counts.getOrDefault(name, 0) + 1);
+        }
+
+        System.out.println("Grace count: " + counts.get("Grace"));
+        System.out.println("Missing count: " + counts.getOrDefault("Katherine", 0));
+        System.out.println("Has Ada: " + counts.containsKey("Ada"));
+    }
+}
+EOF
+```
+
+Compile and run:
+
+```bash
+javac CollectionsVerification.java
+java CollectionsVerification
+```
+
+Expected output:
+
+```text
+Names size: 4
+First name: Ada
+Contains Grace: true
+Unique names: 3
+Grace count: 2
+Missing count: 0
+Has Ada: true
+```
+
+### Intentional logic error
+
+Now change this line:
+
+```java
+counts.put(name, counts.getOrDefault(name, 0) + 1);
+```
+
+To this:
+
+```java
+counts.put(name, 1);
+```
+
+Compile and run again:
+
+```bash
+javac CollectionsVerification.java
+java CollectionsVerification
+```
+
+The program still compiles, but the count is wrong:
+
+```text
+Grace count: 1
+```
+
+This happens because the map value is reset to `1` every time a name appears. The program no longer remembers the previous count.
+
+Fix it by using `getOrDefault(name, 0) + 1`.
+
+### Common verification failures
+
+| What you might see | What it means | How to fix |
+|---|---|---|
+| `cannot find symbol: class ArrayList` | Missing import | Add the needed `import java.util...` line |
+| `NullPointerException` after `map.get(...)` | The key was missing and `get` returned `null` | Use `containsKey` or `getOrDefault` |
+| Duplicate value still appears in `ArrayList` | Lists allow duplicates | Use a `Set` when uniqueness matters |
+| Output order changes for set or map entries | Hash collections do not guarantee order | Use `LinkedHashSet` or `LinkedHashMap` if order matters |
+
+### Evidence to save for your gate
+
+- terminal transcript showing compilation and execution of `CollectionsVerification.java`
+- or a screenshot of your terminal with the expected output visible
+- one note explaining why the intentional counting error compiled but produced the wrong result
+
+### Gate readiness
+
+You are ready for the Track 1 gate when:
+
+- all self-check questions are answered
+- `CollectionsVerification.java` compiles and produces expected output
+- you can explain when to use `ArrayList`, `HashMap`, and `HashSet`
+- you understand why the intentional counting error occurred
+- you have saved evidence, such as a terminal transcript or screenshot
+
 ## Next module
 
 [Module 9 — Testing Basics](./09-testing-basics.md)
