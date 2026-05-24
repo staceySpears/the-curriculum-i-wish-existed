@@ -1,6 +1,6 @@
 // Module 5 Exercise: Methods
 
-public class Methods {
+class Methods {
     public static void main(String[] args) {
         // TODO: Call each method you write and print results
     }
