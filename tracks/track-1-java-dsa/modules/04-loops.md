@@ -98,6 +98,24 @@ for (int i = 0; i < numbers.length; i++) {
 }
 ```
 
+## When to use which loop
+
+The indexed `for` loop is the foundation — you need to understand how indices work. But in everyday coding, when you don't need the index, the **enhanced for-each loop** is clearer and less error-prone:
+
+```java
+// Indexed — use when you need i
+for (int i = 0; i < items.length; i++) {
+    System.out.println(i + ": " + items[i]);
+}
+
+// For-each — use when you only need the value
+for (String item : items) {
+    System.out.println(item);
+}
+```
+
+You will see for-each used throughout Modules 6 and 8. Both styles are worth knowing — indexed loops are still the right choice when you need the position.
+
 ## Exercises
 
 ### Exercise 1: Countdown

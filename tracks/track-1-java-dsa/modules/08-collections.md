@@ -20,8 +20,9 @@ A resizable, ordered list.
 
 ```java
 import java.util.ArrayList;
+import java.util.List;
 
-ArrayList<String> names = new ArrayList<>();
+List<String> names = new ArrayList<>();
 
 names.add("Alice");
 names.add("Bob");
@@ -46,6 +47,8 @@ for (String name : names) {
 }
 ```
 
+> **Interface typing:** Notice the variable is declared as `List<String>`, not `ArrayList<String>`. This is standard modern Java practice — program to the interface, not the implementation. If you later need to swap `ArrayList` for `LinkedList`, only the `new` expression changes, not every line of code that uses the variable.
+
 ### Common `ArrayList` methods
 
 | Method | What it does |
@@ -68,8 +71,9 @@ A collection of key-value pairs. Keys are unique.
 
 ```java
 import java.util.HashMap;
+import java.util.Map;
 
-HashMap<String, Integer> ages = new HashMap<>();
+Map<String, Integer> ages = new HashMap<>();
 
 ages.put("Alice", 25);
 ages.put("Bob", 30);
@@ -85,7 +89,7 @@ for (String name : ages.keySet()) {
 }
 
 // Loop through entries
-for (HashMap.Entry<String, Integer> entry : ages.entrySet()) {
+for (Map.Entry<String, Integer> entry : ages.entrySet()) {
     System.out.println(entry.getKey() + ": " + entry.getValue());
 }
 ```
@@ -111,8 +115,9 @@ A collection of unique values — no duplicates, no guaranteed order.
 
 ```java
 import java.util.HashSet;
+import java.util.Set;
 
-HashSet<String> tags = new HashSet<>();
+Set<String> tags = new HashSet<>();
 
 tags.add("java");
 tags.add("programming");
@@ -141,7 +146,7 @@ for (String tag : tags) {
 Java automatically converts between primitives and their wrapper classes when working with collections:
 
 ```java
-ArrayList<Integer> numbers = new ArrayList<>();
+List<Integer> numbers = new ArrayList<>();
 numbers.add(5);              // autoboxing: int → Integer
 int first = numbers.get(0);  // unboxing: Integer → int
 ```
@@ -162,7 +167,7 @@ Wrapper classes: `Integer`, `Double`, `Boolean`, `Character`, `Long`.
 ### Exercise 1: ArrayList practice
 
 Write a program that:
-1. Creates an `ArrayList<String>` of five names
+1. Creates a `List<String>` (using `new ArrayList<>()`) of five names
 2. Prints all names with a for-each loop
 3. Inserts a name at position 0
 4. Removes the element at index 2
@@ -171,7 +176,7 @@ Write a program that:
 
 ### Exercise 2: Gradebook with HashMap
 
-Create a `HashMap<String, Integer>` of student names to grades.
+Create a `Map<String, Integer>` (using `new HashMap<>()`) of student names to grades.
 - Add five students
 - Print one student's grade
 - Update one grade
@@ -184,8 +189,8 @@ Create a `HashMap<String, Integer>` of student names to grades.
 Write a program that:
 1. Takes a sentence (hardcoded or from input)
 2. Splits it into words with `split(" ")`
-3. Uses a `HashSet` to count unique words
-4. Uses a `HashMap<String, Integer>` to count frequency of each word
+3. Uses a `Set<String>` to count unique words
+4. Uses a `Map<String, Integer>` to count frequency of each word
 5. Prints both results
 
 ### Exercise 4: To-do list manager

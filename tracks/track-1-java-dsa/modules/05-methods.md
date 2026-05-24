@@ -29,11 +29,13 @@ public static returnType methodName(parameterType parameterName) {
 | Part | Meaning |
 |---|---|
 | `public` | Who can call this method (we'll use `public` for now) |
-| `static` | Belongs to the class, not an instance (we'll explain later) |
+| `static` | Belongs to the class, not an instance — see note below |
 | `returnType` | What type of value this method returns (use `void` for nothing) |
 | `methodName` | Name you choose (use verbs, camelCase) |
 | `parameters` | Inputs the method receives |
 | `return` | Send a value back to the caller |
+
+> **Teaching note:** This module uses `static` methods as a scaffold — it lets you practice method syntax without needing to understand objects yet. In real Java code, most methods are instance methods called on objects, not static methods called on the class. Module 7 makes that distinction concrete.
 
 ### Simple examples
 

@@ -181,6 +181,43 @@ public class Counter {
 }
 ```
 
+## Modern alternative: `record` classes (Java 16+)
+
+For simple data carriers — classes that exist only to hold values — Java 16 introduced `record`. A record automatically provides the constructor, getters, `equals()`, `hashCode()`, and `toString()`.
+
+**Traditional class (what you just learned):**
+
+```java
+public class Point {
+    private int x;
+    private int y;
+
+    public Point(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    public int getX() { return x; }
+    public int getY() { return y; }
+}
+```
+
+**Same thing as a `record`:**
+
+```java
+public record Point(int x, int y) {}
+```
+
+**When to use each:**
+
+| Use a regular class when... | Use a `record` when... |
+|---|---|
+| Fields need to change after construction | The object is immutable (values set once) |
+| You need validation logic in setters | It's just a data container |
+| A framework requires getters by convention (e.g., Spring) | You want the compiler to generate the boilerplate |
+
+Both patterns are common in the wild. Getters and setters remain standard in many codebases. Records are increasingly idiomatic for new simple value types.
+
 ## Common pitfalls
 
 | Pitfall | What happens | Fix |
