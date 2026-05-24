@@ -214,6 +214,166 @@ Write a comment explaining the leap year rule in plain English, as if explaining
 4. What happens if you put a semicolon after an `if` condition?
 5. Write an expression that is `true` only if `age` is between 18 and 65 inclusive.
 
+## Verification
+
+Complete both the self-check and the runnable check before moving to Module 04.
+
+### Self-check (reflective)
+
+Answer these in your own words:
+
+- [ ] What is the difference between `if`, `else if`, and `else`?
+- [ ] Why does the order of `else if` conditions matter?
+- [ ] What is the difference between `&&` and `||`?
+- [ ] Why does `switch` usually need `break`?
+- [ ] What is one example of a condition that compiles but still gives the wrong result?
+
+### Runnable check (external)
+
+Create a file called `Conditionals.java`:
+
+```bash
+cat > Conditionals.java <<'EOF'
+public class Conditionals {
+    public static void main(String[] args) {
+        int score = 85;
+        String grade;
+
+        if (score >= 90) {
+            grade = "A";
+        } else if (score >= 80) {
+            grade = "B";
+        } else if (score >= 70) {
+            grade = "C";
+        } else if (score >= 60) {
+            grade = "D";
+        } else {
+            grade = "F";
+        }
+
+        System.out.println("Score: " + score);
+        System.out.println("Grade: " + grade);
+
+        if (score >= 60) {
+            System.out.println("Result: Pass");
+        } else {
+            System.out.println("Result: Fail");
+        }
+
+        int age = 20;
+        boolean hasLicense = true;
+
+        if (age >= 18 && hasLicense) {
+            System.out.println("Can drive: yes");
+        } else {
+            System.out.println("Can drive: no");
+        }
+
+        int day = 3;
+        String dayName;
+
+        switch (day) {
+            case 1:
+                dayName = "Monday";
+                break;
+            case 2:
+                dayName = "Tuesday";
+                break;
+            case 3:
+                dayName = "Wednesday";
+                break;
+            default:
+                dayName = "Unknown";
+                break;
+        }
+
+        System.out.println("Day: " + dayName);
+    }
+}
+EOF
+```
+
+Compile and run:
+
+```bash
+javac Conditionals.java
+java Conditionals
+```
+
+Expected output:
+
+```text
+Score: 85
+Grade: B
+Result: Pass
+Can drive: yes
+Day: Wednesday
+```
+
+### Intentional logic error
+
+Now change the grade section so the `score >= 70` check comes before the `score >= 80` check:
+
+```java
+if (score >= 90) {
+    grade = "A";
+} else if (score >= 70) {
+    grade = "C";
+} else if (score >= 80) {
+    grade = "B";
+} else if (score >= 60) {
+    grade = "D";
+} else {
+    grade = "F";
+}
+```
+
+Compile and run again:
+
+```bash
+javac Conditionals.java
+java Conditionals
+```
+
+The program still compiles, but the output is wrong:
+
+```text
+Score: 85
+Grade: C
+Result: Pass
+Can drive: yes
+Day: Wednesday
+```
+
+This happens because Java checks the conditions from top to bottom and runs the first matching branch. Since `85 >= 70` is true, Java never reaches the later `score >= 80` branch.
+
+Fix it by putting the most specific or highest threshold checks first.
+
+### Common verification failures
+
+| What you might see | What it means | How to fix |
+|---|---|---|
+| Grade is `C` when score is `85` | Conditions are in the wrong order | Check higher thresholds before lower thresholds |
+| `incompatible types: int cannot be converted to boolean` | You used `=` instead of `==` in a condition | Use `==` for comparison |
+| Multiple day names print from `switch` | A `break` statement is missing | Add `break` after each case |
+| An `if` block seems to run when it should not | There may be a semicolon after the condition | Remove the semicolon after `if (...)` |
+
+### Evidence to save for your gate
+
+- terminal transcript showing compilation and execution of `Conditionals.java`
+- or a screenshot of your terminal with the expected output visible
+- one note explaining why the intentional logic error compiled but produced the wrong grade
+
+### Gate readiness
+
+You are ready for the Track 1 gate when:
+
+- all self-check questions are answered
+- `Conditionals.java` compiles and produces expected output
+- you can explain why condition order matters
+- you understand why the intentional logic error occurred
+- you have saved evidence, such as a terminal transcript or screenshot
+
 ## Next module
 
 [Module 4 — Loops](./04-loops.md)
