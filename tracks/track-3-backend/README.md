@@ -1,6 +1,6 @@
-# Track 3 — Backend
+# Track 3 — Backend Engineering
 
-Server-side systems. That's what Track 3 teaches.
+Track 3 moves from local programs to backend services.
 
 This track introduces HTTP, REST APIs, backend frameworks, and database basics. The goal is to build systems that are correct, testable, and explainable — not just working.
 
