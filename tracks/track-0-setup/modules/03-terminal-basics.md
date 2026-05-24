@@ -1,4 +1,4 @@
-# Module 03 — Terminal Basics
+# Module 3 — Terminal Basics
 
 ## Goal
 
