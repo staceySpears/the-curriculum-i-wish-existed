@@ -1,4 +1,4 @@
-# Module 08 — First Submission
+# Module 8 — First Submission
 
 ## Goal
 
