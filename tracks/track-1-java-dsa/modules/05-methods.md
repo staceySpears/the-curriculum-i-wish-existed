@@ -142,7 +142,7 @@ public static int multiply(int a, int b, int c) {
 | Forgetting return type | Java expects a type before method name | Add `void` or appropriate type |
 | Missing return statement in non-void method | Compilation error | Ensure all code paths return a value |
 | Returning wrong type | Compilation error | Return value must match declared return type |
-| Using `static` incorrectly | Will explain in module 7 | For now, keep `static` for methods called from `main` |
+| Doing too much in one method | Harder to test, name, explain, and debug | Split the work into smaller named methods |
 
 ## Exercises
 
