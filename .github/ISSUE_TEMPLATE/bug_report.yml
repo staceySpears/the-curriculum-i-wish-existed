@@ -1,0 +1,62 @@
+name: Curriculum bug report
+description: Report broken commands, incorrect expected output, bad links, or contradictory requirements
+title: "Bug: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this for concrete correctness issues: broken commands, mismatched expected output, bad links, compile errors, or conflicting instructions.
+  - type: input
+    id: location
+    attributes:
+      label: Location
+      description: Link or name the exact file, module, exercise, or gate.
+      placeholder: tracks/track-1-java-dsa/modules/02-variables-types-expressions.md
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What is wrong?
+      placeholder: The module says the output should be X, but running the command prints Y.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: What commands or steps produced the problem?
+      placeholder: |
+        1. Open ...
+        2. Run ...
+        3. See ...
+    validations:
+      required: false
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual result
+      description: Paste the actual output or behavior.
+      render: text
+    validations:
+      required: false
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+      description: What should the curriculum say or do instead?
+    validations:
+      required: false
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      options:
+        - Blocks learner progress
+        - Causes wrong understanding
+        - Confusing but recoverable
+        - Minor typo or polish
+    validations:
+      required: true
