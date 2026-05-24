@@ -58,6 +58,60 @@ Each track includes modules, exercises with verification steps where appropriate
 
 See [`CURRICULUM.md`](./CURRICULUM.md) for the full outline.
 
+## Beta tester guide
+
+This curriculum is under active development. Track 0 is complete and ready for learners. Tracks 1 through 7 and the Capstone have defined architecture and gates, but module content and runnable verification checks are still being strengthened.
+
+### What's ready now
+
+| Component | Status | What you can do |
+|---|---|---|
+| Track 0 | Complete | Set up your environment, learn terminal and Git basics, and make your first submission |
+| Spines | Complete | Read the eight core disciplines: debugging, code reading, testing maturity, self-evaluation, and more |
+| Architecture | Complete | Understand how tracks, gates, and evaluation work |
+| Solo/team paths | Complete | Choose your learning structure |
+
+### What's in progress
+
+| Component | Status | What to expect |
+|---|---|---|
+| Track 1 (Java + DSA) | Modules and exercises drafted | Runnable verification checks are being added module by module |
+| Track 2 (The Bridge) | Modules and exercises drafted | Runnable checks and learner evidence requirements need more testing |
+| Tracks 3 through 7 | Structure defined | READMEs, exercises, projects, and gates exist; full module content is still being built |
+| Capstone | Structure defined | README, gate, and spine notes exist; checkpoints and project guidance need refinement |
+
+### How to give feedback
+
+Your experience as a learner will shape what comes next. We want to know:
+
+- Where did you get stuck that the curriculum should have prevented?
+- What did you need that was not there?
+- What was unclear, missing, or assumed?
+
+Ways to give feedback:
+
+- Open a GitHub issue with the label `feedback`
+- Submit a pull request with a fix or addition
+- Start a discussion in the community space if one is available
+
+### What we ask of beta testers
+
+- Start with Track 0. Complete it, document your stuck points, and share what helped.
+- Be honest. Tell us what did not work. That is more valuable than praise.
+- Understand the tradeoff. Tracks 1 through 7 are still being built and tested, so you may hit unfinished sections.
+
+### What we promise beta testers
+
+- You will not be told to "just keep up." If something is missing, that is a curriculum problem, not a learner failure.
+- Feedback will be read and used to prioritize what gets built next.
+- The standard will stay real, but avoidable confusion will be treated as something to fix.
+
+### Ready to start?
+
+Begin at `tracks/track-0-setup/README.md`. After you complete Track 0, open a GitHub issue with your feedback. That feedback will help prioritize whether Track 1, Track 2, or a support resource gets built next.
+
+First-time beta testers should work through Track 0 solo, then compare notes with others if a community space is available.
+
 ## Solo or team — both paths are fully supported
 
 You can work through this curriculum entirely alone, or with a team of two to four learners. Both paths use the same technical content. What changes is the feedback structure.

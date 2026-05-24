@@ -219,19 +219,93 @@ If `javac Hello.java` printed an error, what was the first thing you checked? Wh
 
 Explain the difference between `javac` and `java` to someone who has never used a compiled language. Use an analogy if it helps. Then explain what bytecode is and why it exists.
 
-## Verification checklist
+## Verification
 
-Before moving to the next module, confirm:
+Complete both the self-check and the runnable check before moving to Module 02.
 
-- [ ] `java --version` shows version 17 or higher
-- [ ] `javac --version` shows a matching version
-- [ ] You created `Hello.java`
-- [ ] `javac Hello.java` ran without errors
-- [ ] `ls` shows both `Hello.class` and `Hello.java`
-- [ ] `java Hello` printed your message
-- [ ] You modified the message, recompiled, and saw the change
-- [ ] You can explain what `javac` does and what `java` does
-- [ ] You can read a compiler error and identify the file and line number
+### Self-check (reflective)
+
+Answer these in your own words. Write them down or explain them to a peer:
+
+- [ ] What is the difference between `javac` and `java`?
+- [ ] What is bytecode, and why does Java use it?
+- [ ] What happens if your class name does not match your filename?
+- [ ] What does `public static void main(String[] args)` mean in plain English?
+
+### Runnable check (external)
+
+Run these commands in your terminal. Copy the output as evidence.
+
+```bash
+# 1. Verify Java installation
+java --version
+
+# 2. Verify compiler installation
+javac --version
+
+# 3. Create the Hello.java file
+cat > Hello.java <<'EOF'
+public class Hello {
+    public static void main(String[] args) {
+        System.out.println("Hello from Track 1");
+    }
+}
+EOF
+
+# 4. Compile
+javac Hello.java
+
+# 5. Verify bytecode was created
+ls Hello.class
+
+# 6. Run the program
+java Hello
+
+# 7. Modify the message and recompile
+# macOS:
+sed -i '' 's/Hello from Track 1/Hello from [YOUR NAME]/' Hello.java
+
+# Linux:
+# sed -i 's/Hello from Track 1/Hello from [YOUR NAME]/' Hello.java
+
+# Windows:
+# Edit Hello.java in your editor and replace the message manually.
+
+javac Hello.java
+java Hello
+```
+
+Expected output:
+
+- `java --version` shows 17 or higher
+- `javac --version` matches
+- `ls Hello.class` shows the file exists
+- the first `java Hello` prints `Hello from Track 1`
+- the second `java Hello` prints your modified message
+
+Evidence to save for your gate:
+
+- terminal transcript showing all seven steps
+- or a screenshot of your terminal with the outputs visible
+
+## Common verification failures
+
+| What you might see | What it means | How to fix |
+|---|---|---|
+| `command not found: java` | Java is not installed | Install JDK 17 or 21 from adoptium.net |
+| `java --version` shows version 8 or 11 | Version is too old | Upgrade to JDK 17 or 21 |
+| `javac: command not found` | Only the JRE is installed, not the JDK | Install the JDK, not just the JRE |
+| `class Hello is public, should be declared in a file named Hello.java` | Filename does not match class name | Rename the file to `Hello.java` or change the class name |
+| `Error: Could not find or load main class Hello` | Wrong command or wrong directory | Run `ls` to confirm `Hello.class` exists, then run `java Hello` with no `.class` extension |
+
+## Gate readiness
+
+You are ready for the Track 1 gate when:
+
+- all self-check questions are answered
+- all runnable commands produce expected output
+- you have saved evidence, such as a terminal transcript or screenshot
+- you can explain what each command does without looking at notes
 
 ## Next module
 

@@ -41,14 +41,14 @@ The capstone proves ownership.
 | Track | Status |
 |---|---|
 | Track 0 | Complete and ready for learners |
-| Track 1 | Roadmap defined; module files not yet present |
-| Track 2 | Roadmap defined; module files not yet present |
-| Track 3 | Roadmap defined; module files not yet present |
-| Track 4 | Roadmap defined; module files not yet present |
-| Track 5 | Roadmap defined; module files not yet present |
-| Track 6 | Roadmap defined; module files not yet present |
-| Track 7 | Roadmap defined; module files not yet present |
-| Capstone | Roadmap defined; project and gate files not yet present |
+| Track 1 | Modules and exercises drafted; runnable verification checks being strengthened |
+| Track 2 | Modules and exercises drafted; runnable checks and evidence requirements need testing |
+| Track 3 | Structure defined; full module content not yet written |
+| Track 4 | Structure defined; full module content not yet written |
+| Track 5 | Structure defined; full module content not yet written |
+| Track 6 | Structure defined; full module content not yet written |
+| Track 7 | Structure defined; full module content not yet written |
+| Capstone | Structure defined; checkpoints and project guidance need refinement |
 
 ## Standard track structure
 
