@@ -1,4 +1,4 @@
-# Module 04 — Editor and Tooling
+# Module 4 — Editor and Tooling
 
 ## Goal
 
