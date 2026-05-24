@@ -1,6 +1,6 @@
 # Track 7 — Engineering Practice
 
-Track 7 is where the learner works like an engineer.
+Professional engineering happens here. Track 7.
 
 This track is not about learning new syntax or frameworks. It is about the habits of professional software engineering: code review, observability, CI/CD, safe refactoring, and collaborative workflow.
 

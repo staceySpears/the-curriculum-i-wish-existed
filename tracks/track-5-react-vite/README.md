@@ -1,6 +1,6 @@
 # Track 5 — React and Vite
 
-Track 5 is where the learner builds component-based frontend applications.
+Build a modern frontend. That's Track 5.
 
 This track introduces React and Vite as a production-oriented development stack. The goal is to build applications where behavior is provable, not just visible.
 

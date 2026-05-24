@@ -1,6 +1,6 @@
 # Track 3 — Backend
 
-Track 3 is where the learner builds server-side systems.
+Server-side systems. That's what Track 3 teaches.
 
 This track introduces HTTP, REST APIs, backend frameworks, and database basics. The goal is to build systems that are correct, testable, and explainable — not just working.
 
@@ -8,7 +8,7 @@ This track introduces HTTP, REST APIs, backend frameworks, and database basics. 
 
 - HTTP: requests, responses, status codes, headers
 - REST API design: resources, routes, methods, contracts
-- Backend framework basics (Spring Boot or equivalent)
+- Backend framework basics using Spring Boot. Spring Boot is the industry standard for Java backend development. Learning it gives you transferable skills — dependency injection, REST controllers, data repositories — that apply to other frameworks too.
 - Connecting to a database and performing basic operations
 - Writing and running tests for API behavior
 - Documenting contracts and endpoints

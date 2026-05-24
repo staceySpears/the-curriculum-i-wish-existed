@@ -1,6 +1,6 @@
 # Track 6 — Interview Readiness
 
-Track 6 is where the learner becomes legible to the industry.
+Legibility to the industry. That's Track 6.
 
 This track does not teach new programming concepts. It teaches the learner to communicate what they already know: in code, in explanation, in story, and on paper.
 

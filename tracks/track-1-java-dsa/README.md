@@ -1,4 +1,4 @@
-# Track 1 — Java and Data Structures
+# Track 1 — Java Fundamentals + DSA Foundations
 
 Track 1 is where the learner begins writing code intentionally.
 
