@@ -222,6 +222,136 @@ When a test fails, how do you decide whether the bug is in the production code o
 4. Why test edge cases and error cases, not just the happy path?
 5. How do you test that a method throws an expected exception?
 
+## Verification
+
+Complete both the self-check and the runnable check before moving to Module 10.
+
+### Self-check (reflective)
+
+Answer these in your own words:
+
+- [ ] What is the purpose of an automated test?
+- [ ] What are the three parts of Arrange-Act-Assert?
+- [ ] Why should tests include edge cases?
+- [ ] What does a failing test tell you?
+- [ ] What is the difference between testing behavior and testing implementation?
+
+### Runnable check (external)
+
+This check uses a tiny dependency-free test harness so you can run it with only Java installed. JUnit uses a real testing framework, but the basic idea is the same: run code, compare actual behavior to expected behavior, and fail loudly when they differ.
+
+Create two files: `Calculator.java` and `CalculatorCheck.java`.
+
+```bash
+cat > Calculator.java <<'EOF'
+public class Calculator {
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    public int divide(int a, int b) {
+        if (b == 0) {
+            throw new ArithmeticException("Cannot divide by zero");
+        }
+        return a / b;
+    }
+}
+EOF
+
+cat > CalculatorCheck.java <<'EOF'
+public class CalculatorCheck {
+    public static void main(String[] args) {
+        Calculator calculator = new Calculator();
+
+        assertEquals(5, calculator.add(2, 3), "add positive numbers");
+        assertEquals(-1, calculator.add(2, -3), "add negative number");
+        assertEquals(4, calculator.divide(8, 2), "divide evenly");
+        assertThrowsDivideByZero(calculator);
+
+        System.out.println("All checks passed");
+    }
+
+    private static void assertEquals(int expected, int actual, String description) {
+        if (expected != actual) {
+            throw new AssertionError(description + " expected " + expected + " but got " + actual);
+        }
+    }
+
+    private static void assertThrowsDivideByZero(Calculator calculator) {
+        try {
+            calculator.divide(5, 0);
+            throw new AssertionError("divide by zero should throw");
+        } catch (ArithmeticException expected) {
+            // Expected path.
+        }
+    }
+}
+EOF
+```
+
+Compile and run:
+
+```bash
+javac Calculator.java CalculatorCheck.java
+java CalculatorCheck
+```
+
+Expected output:
+
+```text
+All checks passed
+```
+
+### Intentional failing check
+
+Now change this line in `Calculator.java`:
+
+```java
+return a + b;
+```
+
+To this:
+
+```java
+return a - b;
+```
+
+Compile and run again:
+
+```bash
+javac Calculator.java CalculatorCheck.java
+java CalculatorCheck
+```
+
+The program compiles, but the check fails with an `AssertionError`. That is the point of an automated check: it catches behavior that changed from what you expected.
+
+Fix it by changing the method back to `return a + b;`.
+
+### Common verification failures
+
+| What you might see | What it means | How to fix |
+|---|---|---|
+| `AssertionError` | Actual behavior did not match expected behavior | Read the message and inspect the method under test |
+| `cannot find symbol: class Calculator` | `Calculator.java` was not compiled or is not in the same folder | Compile both files from the same directory |
+| `ArithmeticException` appears outside the expected test | The exception was not caught where expected | Check the try/catch in the check harness |
+| `All checks passed` after you intentionally broke `add` | The broken code was not saved or recompiled | Save the file and run `javac` again |
+
+### Evidence to save for your gate
+
+- terminal transcript showing the passing check
+- terminal transcript showing the intentional failing check
+- one note explaining what the failing check taught you
+
+### Gate readiness
+
+You are ready for the Track 1 gate when:
+
+- all self-check questions are answered
+- `Calculator.java` and `CalculatorCheck.java` compile and produce expected output
+- you can explain what behavior each check proves
+- you understand why the intentional failing check failed
+- you have saved evidence, such as a terminal transcript or screenshot
+
 ## Next module
 
 [Module 10 — DSA Foundations](./10-dsa-foundations.md)
