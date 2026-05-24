@@ -14,6 +14,7 @@ It should include:
 - a README explaining the problem, your approach, and your data structure choices
 - at least one test class
 - a self-evaluation note
+- module verification evidence from Modules 01 through 10, such as terminal transcripts, screenshots, and short notes from the intentional error checks
 
 ## Correctness requirements
 
@@ -22,6 +23,7 @@ You must be able to:
 - run the code and produce correct output
 - demonstrate that edge cases are handled
 - explain what each class and method does
+- reproduce or explain any Module 01 through 10 verification check from your saved evidence
 
 ## Explanation requirements
 
@@ -32,6 +34,7 @@ You must explain:
 - what would change if the input size grew significantly
 - what a specific error message in your code means
 - how you found and fixed at least one bug
+- what one intentional module error taught you about Java behavior
 
 ## Debugging and revision evidence
 
@@ -42,6 +45,8 @@ Provide one debugging note that includes:
 - what you checked first
 - what hypothesis you tested
 - what fixed it or what you learned
+
+Your debugging note may come from the project or from one of the module verification checks, but project-specific debugging evidence is stronger.
 
 ## Spine evidence
 
@@ -81,8 +86,8 @@ You can write working Java code, choose data structures intentionally, explain t
 
 ### Revise
 
-You are close, but must strengthen missing evidence: an unexplained data structure choice, missing complexity analysis, absent test, or incomplete debugging note.
+You are close, but must strengthen missing evidence: an unexplained data structure choice, missing complexity analysis, absent test, incomplete debugging note, or missing module verification evidence.
 
 ### Repeat
 
-You should revisit Track 1 if you cannot write working Java, cannot explain why you used a data structure, or cannot read a stack trace to find a bug.
+You should revisit Track 1 if you cannot write working Java, cannot explain why you used a data structure, cannot run the verification checks, or cannot read a stack trace to find a bug.
