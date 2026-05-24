@@ -2,19 +2,34 @@
 
 Each file contains `// TODO` comments. Fill in the implementation, compile, and run.
 
+The file names use numeric prefixes so they stay in curriculum order. The class names do not include the numeric prefix.
+
+Example:
+
+```bash
+javac 01-HelloWorld.java
+java HelloWorld
+```
+
+For a full compile check across the exercise folder, run:
+
+```bash
+javac *.java
+```
+
 ## Exercise files
 
-| File | Topics |
-|---|---|
-| `01-HelloWorld.java` | First program, print statements, compilation errors |
-| `02-Variables.java` | Primitives, arithmetic, operator precedence |
-| `03-Conditionals.java` | if/else, grade calculator, leap year, number classifier |
-| `04-Loops.java` | while, do-while, for, sum, factorial, guess-the-number |
-| `05-Methods.java` | Declaration, return types, parameters, overloading |
-| `06-ArraysAndStrings.java` | Array operations, String methods, reversing, vowel count |
-| `07-ClassesAndObjects.java` | BankAccount, Rectangle, Counter — write the classes |
-| `08-Collections.java` | ArrayList, HashMap, HashSet, duplicate detection |
-| `09-TestingBasics.java` | MathUtils stub + JUnit 5 test guidance |
+| File | Class to run | Topics |
+|---|---|---|
+| `01-HelloWorld.java` | `HelloWorld` | First program, print statements, compilation errors |
+| `02-Variables.java` | `Variables` | Primitives, arithmetic, operator precedence |
+| `03-Conditionals.java` | `Conditionals` | if/else, grade calculator, leap year, number classifier |
+| `04-Loops.java` | `Loops` | while, do-while, for, sum, factorial, guess-the-number |
+| `05-Methods.java` | `Methods` | Declaration, return types, parameters, overloading |
+| `06-ArraysAndStrings.java` | `ArraysAndStrings` | Array operations, String methods, reversing, vowel count |
+| `07-ClassesAndObjects.java` | `ClassesAndObjects` | BankAccount, Rectangle, Counter — write the classes |
+| `08-Collections.java` | `Collections` | ArrayList, HashMap, HashSet, duplicate detection |
+| `09-TestingBasics.java` | `TestingBasics` | MathUtils stub + JUnit 5 test guidance |
 
 ## How to work through each file
 
