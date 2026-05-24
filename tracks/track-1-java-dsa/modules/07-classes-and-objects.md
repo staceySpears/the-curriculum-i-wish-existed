@@ -297,6 +297,154 @@ Write Javadoc comments for each method: preconditions (what must be true before 
 4. What is the difference between a static field and an instance field?
 5. What does `this` refer to inside an instance method?
 
+## Verification
+
+Complete both the self-check and the runnable check before moving to Module 08.
+
+### Self-check (reflective)
+
+Answer these in your own words:
+
+- [ ] What is the difference between a class and an object?
+- [ ] What does a constructor do?
+- [ ] Why should fields usually be `private`?
+- [ ] What does `this` refer to?
+- [ ] What is the difference between an instance method and a static method?
+
+### Runnable check (external)
+
+Create two files: `BankAccount.java` and `ObjectsVerification.java`.
+
+```bash
+cat > BankAccount.java <<'EOF'
+public class BankAccount {
+    private String owner;
+    private int balance;
+
+    public BankAccount(String owner, int startingBalance) {
+        this.owner = owner;
+        if (startingBalance >= 0) {
+            this.balance = startingBalance;
+        } else {
+            this.balance = 0;
+        }
+    }
+
+    public String getOwner() {
+        return owner;
+    }
+
+    public int getBalance() {
+        return balance;
+    }
+
+    public void deposit(int amount) {
+        if (amount > 0) {
+            balance += amount;
+        }
+    }
+
+    public boolean withdraw(int amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+            return true;
+        }
+        return false;
+    }
+}
+EOF
+
+cat > ObjectsVerification.java <<'EOF'
+public class ObjectsVerification {
+    public static void main(String[] args) {
+        BankAccount account = new BankAccount("Ada", 100);
+
+        System.out.println("Owner: " + account.getOwner());
+        System.out.println("Starting balance: " + account.getBalance());
+
+        account.deposit(50);
+        System.out.println("After deposit: " + account.getBalance());
+
+        boolean firstWithdrawal = account.withdraw(30);
+        System.out.println("Withdrew 30: " + firstWithdrawal);
+        System.out.println("After withdrawal: " + account.getBalance());
+
+        boolean secondWithdrawal = account.withdraw(500);
+        System.out.println("Withdrew 500: " + secondWithdrawal);
+        System.out.println("Final balance: " + account.getBalance());
+    }
+}
+EOF
+```
+
+Compile and run:
+
+```bash
+javac BankAccount.java ObjectsVerification.java
+java ObjectsVerification
+```
+
+Expected output:
+
+```text
+Owner: Ada
+Starting balance: 100
+After deposit: 150
+Withdrew 30: true
+After withdrawal: 120
+Withdrew 500: false
+Final balance: 120
+```
+
+### Intentional compiler error
+
+Now add this line after the account is created in `ObjectsVerification.java`:
+
+```java
+System.out.println(account.balance);
+```
+
+Compile again:
+
+```bash
+javac BankAccount.java ObjectsVerification.java
+```
+
+You should see an error because `balance` has private access in `BankAccount`.
+
+This is encapsulation at work. Code outside the class cannot directly read or change a private field. It must use public methods such as `getBalance()`, `deposit()`, or `withdraw()`.
+
+Fix it by removing the direct field access and using:
+
+```java
+System.out.println(account.getBalance());
+```
+
+### Common verification failures
+
+| What you might see | What it means | How to fix |
+|---|---|---|
+| `balance has private access in BankAccount` | Code outside the class tried to access a private field | Use a public method such as `getBalance()` |
+| `constructor BankAccount cannot be applied to given types` | The constructor call does not match the constructor parameters | Check argument count, order, and types |
+| Final balance is wrong | Deposit or withdrawal logic changed the state incorrectly | Trace the balance after each method call |
+| `cannot find symbol` for `getBalance` | Method name is misspelled or missing | Check method spelling and class file |
+
+### Evidence to save for your gate
+
+- terminal transcript showing compilation and execution of both files
+- or a screenshot of your terminal with the expected output visible
+- one note explaining why private field access failed
+
+### Gate readiness
+
+You are ready for the Track 1 gate when:
+
+- all self-check questions are answered
+- `BankAccount.java` and `ObjectsVerification.java` compile and produce expected output
+- you can explain how object state changes after each method call
+- you understand why the intentional private-field access failed
+- you have saved evidence, such as a terminal transcript or screenshot
+
 ## Next module
 
 [Module 8 — Collections](./08-collections.md)
