@@ -8,7 +8,7 @@
 //   testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
 //   test { useJUnitPlatform() }
 
-public class TestingBasics {
+class TestingBasics {
 
     // MathUtils — the class under test
     // After verifying it works, introduce bugs and verify tests catch them
