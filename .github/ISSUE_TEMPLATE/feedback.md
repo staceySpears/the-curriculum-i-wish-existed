@@ -1,0 +1,72 @@
+---
+name: Learner feedback
+description: Share where the curriculum helped, confused, blocked, or assumed too much
+title: "Feedback: "
+labels: [feedback]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping improve the curriculum. Honest stuck points are especially useful.
+  - type: dropdown
+    id: track
+    attributes:
+      label: Track
+      description: Where were you when this came up?
+      options:
+        - Track 0 — Setup and Mental Models
+        - Track 1 — Java Fundamentals + DSA Foundations
+        - Track 2 — The Bridge
+        - Track 3 — Backend Engineering
+        - Track 4 — Frontend Fundamentals
+        - Track 5 — Modern Frontend with React and Vite
+        - Track 6 — System Design, Behavioral, and Interview Mechanics
+        - Track 7 — Engineering Practice and Modern Tooling
+        - Capstone
+        - General repo / README / navigation
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: Location
+      description: Link or name the file, module, exercise, or gate.
+      placeholder: tracks/track-0-setup/modules/03-terminal-basics.md
+    validations:
+      required: true
+  - type: textarea
+    id: experience
+    attributes:
+      label: What happened?
+      description: Describe your learner experience in plain language.
+      placeholder: I got stuck when...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect or need?
+      description: What would have helped you keep going?
+      placeholder: I expected an example of...
+    validations:
+      required: false
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence or notes
+      description: Paste error messages, confusing wording, screenshots, terminal output, or notes if useful.
+      render: text
+    validations:
+      required: false
+  - type: dropdown
+    id: impact
+    attributes:
+      label: Impact
+      description: How much did this affect progress?
+      options:
+        - Blocked me completely
+        - Slowed me down
+        - Confused me but I continued
+        - Polish / clarity improvement
+    validations:
+      required: true
