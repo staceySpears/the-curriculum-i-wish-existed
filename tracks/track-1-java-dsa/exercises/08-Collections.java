@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 
-public class Collections {
+class Collections {
     public static void main(String[] args) {
         // --- ArrayList ---
 
