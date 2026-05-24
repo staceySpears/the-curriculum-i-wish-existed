@@ -1,6 +1,6 @@
-# Track 5 — React and Vite
+# Track 5 — Modern Frontend with React and Vite
 
-Build a modern frontend. That's Track 5.
+Track 5 introduces modern frontend development after the browser foundation is in place.
 
 This track introduces React and Vite as a production-oriented development stack. The goal is to build applications where behavior is provable, not just visible.
 
