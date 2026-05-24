@@ -2,11 +2,11 @@
 
 This matrix shows how each spine is weighted across tracks.
 
-**P** = Primary. This is a main focus. Gate evidence is required here.
-**S** = Secondary. This shows up and matters, but is not the gate focus.
+**P** = Primary. This is a main focus. Gate readiness depends on this evidence.
+**S** = Secondary. This shows up and matters, but is not the main readiness focus.
 **—** = Not a focus in this track.
 
-Gates should ask for evidence from primary spines only. Secondary spines reinforce but do not block.
+Gates may ask for evidence from all active spines because the habits reinforce each other. Primary spines carry the readiness weight: weak primary evidence should block the gate, while weak secondary evidence should usually become revision guidance unless the track gate says otherwise.
 
 ---
 
