@@ -235,6 +235,129 @@ Write a Javadoc comment (using `/** ... */`) for each method explaining what it 
 4. What is method overloading?
 5. Write the signature for a method that takes a `String` and an `int` and returns a `boolean`.
 
+## Verification
+
+Complete both the self-check and the runnable check before moving to Module 06.
+
+### Self-check (reflective)
+
+Answer these in your own words:
+
+- [ ] What is the difference between a parameter and an argument?
+- [ ] What does a method's return type tell Java?
+- [ ] What does `void` mean?
+- [ ] Why should methods usually do one clear job?
+- [ ] What is method overloading?
+
+### Runnable check (external)
+
+Create a file called `Methods.java`:
+
+```bash
+cat > Methods.java <<'EOF'
+public class Methods {
+    public static void main(String[] args) {
+        System.out.println("Add: " + add(4, 6));
+        System.out.println("Square: " + square(5));
+        System.out.println("Is 8 even: " + isEven(8));
+        System.out.println("Greeting: " + greet("Track 1"));
+        printStars(5);
+    }
+
+    public static int add(int a, int b) {
+        return a + b;
+    }
+
+    public static int square(int value) {
+        return value * value;
+    }
+
+    public static boolean isEven(int value) {
+        return value % 2 == 0;
+    }
+
+    public static String greet(String name) {
+        return "Hello, " + name;
+    }
+
+    public static void printStars(int count) {
+        for (int i = 0; i < count; i++) {
+            System.out.print("*");
+        }
+        System.out.println();
+    }
+}
+EOF
+```
+
+Compile and run:
+
+```bash
+javac Methods.java
+java Methods
+```
+
+Expected output:
+
+```text
+Add: 10
+Square: 25
+Is 8 even: true
+Greeting: Hello, Track 1
+*****
+```
+
+### Intentional compiler error
+
+Now change the `square` method so it calculates the value but does not return it:
+
+```java
+public static int square(int value) {
+    int result = value * value;
+}
+```
+
+Compile again:
+
+```bash
+javac Methods.java
+```
+
+You should see an error. Java rejects this method because a method declared as `int` must return an `int`.
+
+Fix it by restoring the `return` statement:
+
+```java
+public static int square(int value) {
+    return value * value;
+}
+```
+
+### Common verification failures
+
+| What you might see | What it means | How to fix |
+|---|---|---|
+| `missing return statement` | A non-`void` method does not return on every path | Return a value that matches the method's return type |
+| `not a statement` | You wrote an expression where Java expected a full statement | Use `return`, assignment, or a method call as appropriate |
+| `method cannot be applied to given types` | The arguments do not match the parameters | Check argument count, order, and types |
+| `cannot find symbol` | A method name is misspelled or out of scope | Check spelling and make sure the method is inside the class |
+
+### Evidence to save for your gate
+
+- terminal transcript showing compilation and execution of `Methods.java`
+- or a screenshot of your terminal with the expected output visible
+- one note explaining why the intentional return-type error happened
+
+### Gate readiness
+
+You are ready for the Track 1 gate when:
+
+- all self-check questions are answered
+- `Methods.java` compiles and produces expected output
+- you can explain what each method takes and returns
+- you understand why the intentional compiler error occurred
+- you have saved evidence, such as a terminal transcript or screenshot
+
 ## Next module
 
 [Module 6 — Arrays and Strings](./06-arrays-and-strings.md)
