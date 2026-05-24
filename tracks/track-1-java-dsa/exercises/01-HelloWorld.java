@@ -1,6 +1,6 @@
 // Module 1 Exercise: Java Environment and First Program
 
-public class HelloWorld {
+class HelloWorld {
     public static void main(String[] args) {
         // TODO: Print "Hello, world!" to the console
         // Hint: System.out.println()
