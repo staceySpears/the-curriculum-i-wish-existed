@@ -1,6 +1,6 @@
 // Module 4 Exercise: Loops
 
-public class Loops {
+class Loops {
     public static void main(String[] args) {
         // TODO: Countdown from 10 to 1, then print "Blast off!"
         // Write three separate versions: while, do-while, for
