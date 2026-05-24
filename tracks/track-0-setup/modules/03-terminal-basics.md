@@ -24,6 +24,52 @@ You should learn the command for each action on your operating system:
 
 The exact command may differ by operating system, but the mental model is the same.
 
+## Essential commands by system
+
+| Task | macOS/Linux | Windows Command Prompt |
+|---|---|---|
+| Print the current folder | `pwd` | `cd` |
+| List files | `ls` | `dir` |
+| Change folders | `cd folder-name` | `cd folder-name` |
+| Move up one folder | `cd ..` | `cd ..` |
+| Create a folder | `mkdir folder-name` | `mkdir folder-name` |
+| Create an empty file | `touch filename.txt` | `type nul > filename.txt` |
+| Copy a file | `cp source destination` | `copy source destination` |
+| Move or rename a file | `mv source destination` | `move source destination` |
+| Remove a file you intentionally created | `rm filename.txt` | `del filename.txt` |
+| Remove a folder you intentionally created | `rm -r folder-name` | `rmdir /s folder-name` |
+
+## Expected output examples
+
+On macOS or Linux:
+
+```bash
+$ pwd
+/Users/yourname/curriculum-work/track-0-practice
+
+$ ls
+notes  sandbox
+
+$ cd notes
+$ pwd
+/Users/yourname/curriculum-work/track-0-practice/notes
+```
+
+On Windows Command Prompt:
+
+```bat
+> cd
+C:\Users\yourname\curriculum-work\track-0-practice
+
+> dir
+notes
+sandbox
+
+> cd notes
+> cd
+C:\Users\yourname\curriculum-work\track-0-practice\notes
+```
+
 ## Terminal safety
 
 Do not paste commands you do not understand.

@@ -25,6 +25,38 @@ A beginner Git workflow looks like this:
 
 Do not worry about advanced branching yet.
 
+## Essential Git commands
+
+| Task | Command | Expected output on success |
+|---|---|---|
+| Initialize a repository | `git init` | `Initialized empty Git repository in ...` |
+| Check repository status | `git status` | Shows untracked, modified, staged, or clean files |
+| Stage one file | `git add filename.txt` | No output when successful |
+| Stage all changes | `git add .` | No output when successful |
+| Commit staged changes | `git commit -m "message"` | Shows files changed and lines added or removed |
+| View commit history | `git log --oneline` | Shows commits with short hashes |
+| View unstaged changes | `git diff` | Shows changed lines before staging |
+
+## Example workflow
+
+```bash
+$ git init
+Initialized empty Git repository in /Users/yourname/track-0-practice/.git/
+
+$ echo "Hello" > README.md
+
+$ git status
+On branch master
+Untracked files:
+  README.md
+
+$ git add README.md
+
+$ git commit -m "Add README"
+[master (root-commit) abc1234] Add README
+ 1 file changed, 1 insertion(+)
+```
+
 ## Commit messages
 
 A good commit message says what changed.

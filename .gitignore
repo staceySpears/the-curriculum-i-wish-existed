@@ -1,2 +1,21 @@
+# macOS
 .DS_Store
+.AppleDouble
+.LSOverride
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Documents
 *.docx
+
+# Java
+*.class
+target/
+*.log
+
+# Node
+node_modules/

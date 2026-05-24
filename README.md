@@ -42,7 +42,7 @@ See [`TIMELINE.md`](./TIMELINE.md) for module-by-module estimates.
 
 ## How it is structured
 
-The curriculum is organized into eight tracks plus a capstone.
+The curriculum is organized into eight tracks plus a capstone. Track 0 is complete and ready for learners. Tracks 1 through 7 and the Capstone are in active development. The structure and gate criteria are defined; module content is being added incrementally.
 
 Each track includes modules, exercises with verification steps where appropriate, a project, recurring spine prompts, and a Track Gate that proves the learner is ready to move forward.
 

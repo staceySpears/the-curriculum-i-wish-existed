@@ -14,14 +14,46 @@ In Track 0, the important idea is simpler:
 
 > Code in a file can produce behavior when the right tool runs it.
 
+## The starter program
+
+A tiny starter program is provided in `../starter/hello.js`:
+
+```javascript
+console.log("Hello from Track 0!");
+console.log("If you can see this, your environment is working.");
+```
+
+Your task is to run this program using Node.js.
+
+If you have Node.js installed, run this command from the `tracks/track-0-setup/` folder:
+
+```bash
+node starter/hello.js
+```
+
+Expected output:
+
+```text
+Hello from Track 0!
+If you can see this, your environment is working.
+```
+
+If you do not have Node.js yet, use one small program in a language or tool available on your computer. The specific language does not matter for this module. The goal is to run some code and connect the file, the command, and the output.
+
+Examples:
+
+- Python: create `hello.py` with `print("Hello from Track 0!")`
+- Java: create `Hello.java` with a tiny `main` method that prints `Hello from Track 0!`
+- Terminal only: run `echo "Hello from Track 0!"`
+
 ## Practice
 
-Create a tiny program using the language or starter file provided by the curriculum or instructor.
+Run the starter program or your chosen tiny program.
 
 The program should print:
 
 ```text
-Track 0 is running.
+Hello from Track 0!
 ```
 
 Then change the message and run it again.

@@ -20,7 +20,7 @@ Every learner-facing module should include:
 
 ## Spine prompts by track
 
-When adding spine prompts to a module, refer to the [spine-by-track matrix](../spines/spine-by-track-matrix.md) to know which spines are primary (gate-blocking) vs. secondary (practice encouraged).
+When adding spine prompts to a module, refer to the [spine-by-track matrix](./spines/spine-by-track-matrix.md) to know which spines are primary (gate-blocking) vs. secondary (practice encouraged).
 
 - **Primary spines** for the track should appear prominently in gates and key modules.
 - **Secondary spines** can appear where relevant but are not required for every module.
@@ -33,4 +33,3 @@ When adding spine prompts to a module, refer to the [spine-by-track matrix](../s
 - Does it preserve the AI policy for the track?
 - Does it produce evidence that can be used at a gate?
 - Do the spine prompts match the primary/secondary weighting for this track?
-

@@ -32,7 +32,7 @@ It should include:
 
 - the project files
 - a short README or notes file
-- at least two meaningful commits
+- at least three meaningful commits, matching the Track 0 gate
 - a debugging note
 - a reflection
 

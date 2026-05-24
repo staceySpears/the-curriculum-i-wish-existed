@@ -37,7 +37,7 @@ Evidence:
 
 ## Exercise 4 — Run something
 
-Run the tiny program or starter script provided for Track 0.
+Run the starter program in `../starter/hello.js` or another tiny program available in your environment.
 
 Evidence:
 

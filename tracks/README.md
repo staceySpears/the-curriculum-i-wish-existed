@@ -36,6 +36,20 @@ Track 7 teaches professional workflow and modern engineering practice.
 
 The capstone proves ownership.
 
+## Current status by track
+
+| Track | Status |
+|---|---|
+| Track 0 | Complete and ready for learners |
+| Track 1 | Roadmap defined; module files not yet present |
+| Track 2 | Roadmap defined; module files not yet present |
+| Track 3 | Roadmap defined; module files not yet present |
+| Track 4 | Roadmap defined; module files not yet present |
+| Track 5 | Roadmap defined; module files not yet present |
+| Track 6 | Roadmap defined; module files not yet present |
+| Track 7 | Roadmap defined; module files not yet present |
+| Capstone | Roadmap defined; project and gate files not yet present |
+
 ## Standard track structure
 
 Each track should follow the same basic structure.
