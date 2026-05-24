@@ -195,6 +195,148 @@ How would you write tests for a method that contains a loop? What edge cases sho
 4. Write a loop that prints the first 10 powers of 2: 1, 2, 4, 8, 16, 32, 64, 128, 256, 512.
 5. What is the difference between `i++` and `++i` when used as a loop update?
 
+## Verification
+
+Complete both the self-check and the runnable check before moving to Module 05.
+
+### Self-check (reflective)
+
+Answer these in your own words:
+
+- [ ] What are the three parts of a `for` loop?
+- [ ] When would a `while` loop be a better choice than a `for` loop?
+- [ ] Why does a loop need some way to move toward stopping?
+- [ ] What is an off-by-one error?
+- [ ] What does `break` do inside a loop?
+
+### Runnable check (external)
+
+Create a file called `Loops.java`:
+
+```bash
+cat > Loops.java <<'EOF'
+public class Loops {
+    public static void main(String[] args) {
+        int sum = 0;
+
+        for (int i = 1; i <= 5; i++) {
+            sum = sum + i;
+        }
+
+        System.out.println("Sum 1 to 5: " + sum);
+
+        int count = 3;
+        while (count > 0) {
+            System.out.println("Countdown: " + count);
+            count--;
+        }
+
+        int[] numbers = {4, 7, 10, 13, 16};
+        int evenCount = 0;
+
+        for (int number : numbers) {
+            if (number % 2 == 0) {
+                evenCount++;
+            }
+        }
+
+        System.out.println("Even count: " + evenCount);
+
+        int target = 13;
+        int foundIndex = -1;
+
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] == target) {
+                foundIndex = i;
+                break;
+            }
+        }
+
+        System.out.println("Target index: " + foundIndex);
+    }
+}
+EOF
+```
+
+Compile and run:
+
+```bash
+javac Loops.java
+java Loops
+```
+
+Expected output:
+
+```text
+Sum 1 to 5: 15
+Countdown: 3
+Countdown: 2
+Countdown: 1
+Even count: 3
+Target index: 3
+```
+
+### Intentional logic error
+
+Now change this loop condition:
+
+```java
+for (int i = 1; i <= 5; i++) {
+```
+
+To this:
+
+```java
+for (int i = 1; i < 5; i++) {
+```
+
+Compile and run again:
+
+```bash
+javac Loops.java
+java Loops
+```
+
+The program still compiles, but the sum is wrong:
+
+```text
+Sum 1 to 5: 10
+Countdown: 3
+Countdown: 2
+Countdown: 1
+Even count: 3
+Target index: 3
+```
+
+This is an off-by-one error. The loop stops before `i` reaches `5`, so it adds `1 + 2 + 3 + 4` instead of `1 + 2 + 3 + 4 + 5`.
+
+Fix it by changing the condition back to `i <= 5`.
+
+### Common verification failures
+
+| What you might see | What it means | How to fix |
+|---|---|---|
+| Sum is `10` instead of `15` | The loop stopped one iteration too early | Check whether the condition should use `<` or `<=` |
+| Program never stops printing | The loop condition never becomes `false` | Check whether the loop variable changes inside the loop |
+| `ArrayIndexOutOfBoundsException` | The loop tried to access an invalid array index | Use `i < array.length`, not `i <= array.length` |
+| Target index is `-1` | The target was not found or the comparison never matched | Check the target value and the loop condition |
+
+### Evidence to save for your gate
+
+- terminal transcript showing compilation and execution of `Loops.java`
+- or a screenshot of your terminal with the expected output visible
+- one note explaining why the intentional off-by-one error compiled but produced the wrong sum
+
+### Gate readiness
+
+You are ready for the Track 1 gate when:
+
+- all self-check questions are answered
+- `Loops.java` compiles and produces expected output
+- you can explain how the loop variable changes on each iteration
+- you understand why the intentional off-by-one error occurred
+- you have saved evidence, such as a terminal transcript or screenshot
+
 ## Next module
 
 [Module 5 — Methods](./05-methods.md)
