@@ -1,4 +1,4 @@
-# Module 01 — What Is Code?
+# Module 1 — What Is Code?
 
 ## Goal
 
