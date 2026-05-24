@@ -1,6 +1,6 @@
-# Track 6 — Interview Readiness
+# Track 6 — System Design, Behavioral, and Interview Mechanics
 
-Legibility to the industry. That's Track 6.
+Track 6 prepares the learner for serious interview loops without reducing the curriculum to interview cram.
 
 This track does not teach new programming concepts. It teaches the learner to communicate what they already know: in code, in explanation, in story, and on paper.
 
