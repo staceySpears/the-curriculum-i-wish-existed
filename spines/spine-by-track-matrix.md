@@ -28,25 +28,25 @@ Gates may ask for evidence from all active spines because the habits reinforce e
 ### Track 0 — Setup
 Debugging and technical communication are primary because the learner's first gate must prove they can use tools, read errors, and communicate what they did. Everything else is not yet in play.
 
-### Track 1 — Java and DSA
+### Track 1 — Java Fundamentals + DSA Foundations
 Big-O and Discipline of Doubt are primary. The learner must be able to reason about cost and choose data structures intentionally, and must practice edge-case thinking from the start.
 
 ### Track 2 — The Bridge
 Code reading is primary. This track exists specifically to break the habit of only reading code you wrote yourself. Debugging is co-primary because reading and tracing are not enough without investigation when things break.
 
-### Track 3 — Backend
+### Track 3 — Backend Engineering
 Testing maturity moves to primary here. The learner is building APIs and must prove claims about behavior. Technical communication is co-primary because contracts (APIs, READMEs, request/response formats) must be legible.
 
 ### Track 4 — Frontend Fundamentals
 Discipline of Doubt is primary. The learner must practice edge-case thinking applied to UI: empty states, invalid input, missing data, accessibility, and layout failure. AI as scaffolding begins.
 
-### Track 5 — React and Vite
+### Track 5 — Modern Frontend with React and Vite
 Testing maturity moves to primary. Component behavior must be provable, not just visible.
 
-### Track 6 — Interview Readiness
+### Track 6 — System Design, Behavioral, and Interview Mechanics
 Self-evaluation and technical communication are co-primary. This track is about legibility: can the learner explain their work, tell a credible story, and judge their own readiness honestly?
 
-### Track 7 — Engineering Practice
+### Track 7 — Engineering Practice and Modern Tooling
 Most spines are primary or secondary. The learner is synthesizing everything: debugging real systems, reading unfamiliar code, making tradeoff arguments, writing for maintainability, and using AI professionally.
 
 ### Capstone
