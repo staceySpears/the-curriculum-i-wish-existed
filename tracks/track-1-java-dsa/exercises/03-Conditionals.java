@@ -1,6 +1,6 @@
 // Module 3 Exercise: Conditionals
 
-public class Conditionals {
+class Conditionals {
     public static void main(String[] args) {
         // TODO: Grade calculator
         // Take an integer score (0-100) and print the letter grade
