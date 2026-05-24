@@ -139,6 +139,137 @@ Write a method comment for `reverse` explaining what it takes, what it returns, 
 4. What is an `ArrayIndexOutOfBoundsException`? How do you prevent it?
 5. What is the difference between `array.length` and `string.length()`? (Note the parentheses.)
 
+## Verification
+
+Complete both the self-check and the runnable check before moving to Module 07.
+
+### Self-check (reflective)
+
+Answer these in your own words:
+
+- [ ] What index does a Java array start at?
+- [ ] What is the last valid index of an array with length `n`?
+- [ ] Why do arrays use `.length` while strings use `.length()`?
+- [ ] Why should strings be compared with `.equals()` instead of `==`?
+- [ ] What does `ArrayIndexOutOfBoundsException` mean?
+
+### Runnable check (external)
+
+Create a file called `ArraysAndStrings.java`:
+
+```bash
+cat > ArraysAndStrings.java <<'EOF'
+public class ArraysAndStrings {
+    public static void main(String[] args) {
+        int[] scores = {90, 85, 88, 92, 79};
+
+        int sum = 0;
+        int max = scores[0];
+
+        for (int score : scores) {
+            sum += score;
+            if (score > max) {
+                max = score;
+            }
+        }
+
+        System.out.println("Score count: " + scores.length);
+        System.out.println("Score sum: " + sum);
+        System.out.println("Highest score: " + max);
+
+        String word = "level";
+        String reversed = "";
+
+        for (int i = word.length() - 1; i >= 0; i--) {
+            reversed += word.charAt(i);
+        }
+
+        System.out.println("Word: " + word);
+        System.out.println("Reversed: " + reversed);
+        System.out.println("Palindrome: " + word.equals(reversed));
+
+        String language = new String("java");
+        System.out.println("String equals: " + language.equals("java"));
+    }
+}
+EOF
+```
+
+Compile and run:
+
+```bash
+javac ArraysAndStrings.java
+java ArraysAndStrings
+```
+
+Expected output:
+
+```text
+Score count: 5
+Score sum: 434
+Highest score: 92
+Word: level
+Reversed: level
+Palindrome: true
+String equals: true
+```
+
+### Intentional logic error
+
+Now change this line:
+
+```java
+System.out.println("String equals: " + language.equals("java"));
+```
+
+To this:
+
+```java
+System.out.println("String equals: " + (language == "java"));
+```
+
+Compile and run again:
+
+```bash
+javac ArraysAndStrings.java
+java ArraysAndStrings
+```
+
+The program still compiles, but the string comparison result is wrong:
+
+```text
+String equals: false
+```
+
+This happens because `==` compares whether two references point to the same object. `.equals()` compares the actual characters inside the strings.
+
+Fix it by changing the comparison back to `.equals()`.
+
+### Common verification failures
+
+| What you might see | What it means | How to fix |
+|---|---|---|
+| `ArrayIndexOutOfBoundsException` | You used an index before `0` or at/after `array.length` | Check loop bounds and array length |
+| String comparison prints `false` unexpectedly | You used `==` instead of `.equals()` | Use `.equals()` for string content comparison |
+| Reversed word is missing a letter | The loop started or stopped at the wrong index | Check whether the loop includes index `0` |
+| `cannot find symbol: method length` | You used `.length()` on an array or `.length` on a string | Arrays use `.length`; strings use `.length()` |
+
+### Evidence to save for your gate
+
+- terminal transcript showing compilation and execution of `ArraysAndStrings.java`
+- or a screenshot of your terminal with the expected output visible
+- one note explaining why the intentional string comparison error compiled but produced the wrong result
+
+### Gate readiness
+
+You are ready for the Track 1 gate when:
+
+- all self-check questions are answered
+- `ArraysAndStrings.java` compiles and produces expected output
+- you can explain valid array index boundaries
+- you understand why `==` is wrong for string content comparison
+- you have saved evidence, such as a terminal transcript or screenshot
+
 ## Next module
 
 [Module 7 — Classes and Objects](./07-classes-and-objects.md)
