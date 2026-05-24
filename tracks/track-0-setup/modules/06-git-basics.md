@@ -1,4 +1,4 @@
-# Module 06 — Git Basics
+# Module 6 — Git Basics
 
 ## Goal
 
