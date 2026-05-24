@@ -2,7 +2,7 @@
 
 import java.util.Arrays;
 
-public class ArraysAndStrings {
+class ArraysAndStrings {
     public static void main(String[] args) {
         // TODO: Declare an int array of size 5
         // Assign values 10, 20, 30, 40, 50
