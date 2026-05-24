@@ -76,7 +76,7 @@ public class Variables {
         System.out.println("Age in months: " + ageInMonths);
 
         double discountedPrice = price * 0.9;
-        System.out.println("Discounted price: $" + discountedPrice);
+        System.out.printf("Discounted price: $%.2f%n", discountedPrice);
     }
 }
 EOF
@@ -97,8 +97,10 @@ Age: 25
 Price: $19.99
 Student: true
 Age in months: 300
-Discounted price: $17.991
+Discounted price: $17.99
 ```
+
+The `printf` line formats the discount to two decimal places so the displayed money value is predictable. You do not need to master `printf` yet. For now, notice that the variable still stores a `double`; the print command controls how that `double` appears in the terminal.
 
 ### Intentional error
 
