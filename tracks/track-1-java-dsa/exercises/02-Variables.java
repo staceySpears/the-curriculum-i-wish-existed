@@ -1,6 +1,6 @@
 // Module 2 Exercise: Variables, Types, and Expressions
 
-public class Variables {
+class Variables {
     public static void main(String[] args) {
         // TODO: Declare one variable of each primitive type:
         // int, double, boolean, char, long
