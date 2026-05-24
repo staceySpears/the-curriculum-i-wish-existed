@@ -1,6 +1,6 @@
-# Track 7 — Engineering Practice
+# Track 7 — Engineering Practice and Modern Tooling
 
-Professional engineering happens here. Track 7.
+Track 7 teaches the practices that make someone easier to trust as an engineer.
 
 This track is not about learning new syntax or frameworks. It is about the habits of professional software engineering: code review, observability, CI/CD, safe refactoring, and collaborative workflow.
 
